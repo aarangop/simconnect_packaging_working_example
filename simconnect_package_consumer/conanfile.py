@@ -6,16 +6,6 @@ class SimconnectConsumerConan(ConanFile):
     name = "simconnect_consumer"
     version = "0.1"
 
-    # Optional metadata
-    license = "<Put the package license here>"
-    author = "<Put your name here> <And your email here>"
-    url = "<Package recipe repository url here, for issues about the package>"
-    description = "<Description of SimconnectConsumer here>"
-    topics = ("<Put some tag here>", "<here>", "<and here>")
-    default_options = {
-        "simconnect_package:shared": True
-    }
-
     # Binary configuration
     settings = "os", "compiler", "build_type", "arch"
 
@@ -24,7 +14,7 @@ class SimconnectConsumerConan(ConanFile):
 
     requires = "simconnect_package/0.1"
 
-    generators = "cmake_find_package_multi"
+    generators = "CMakeDeps"
 
     def layout(self):
         cmake_layout(self)
